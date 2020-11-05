@@ -1,10 +1,21 @@
 import React from 'react';
-import './App.css';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
+import Home from './views/Home';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
