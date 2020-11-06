@@ -2,14 +2,29 @@ import { useCallback, useEffect, useState } from 'react';
 
 export const useMask = (animateTime: number) => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const [isBreak, setIsBreak] = useState<boolean>(false);
+  const [timer, setTimer] = useState<number>(0);
+
   const toggleActive = useCallback(() => {
-    setIsActive(true);
-  }, []);
+    if (isActive) {
+      clearTimeout(timer);
+      setIsBreak(true);
+      setIsActive(false);
+    } else {
+      setIsActive(true);
+    }
+  }, [isActive, timer]);
+
   useEffect(() => {
     if (isActive) {
-      setTimeout(() => setIsActive(false), animateTime);
+      setTimer(setTimeout(() => setIsActive(false), animateTime));
+    } else {
+      if (isBreak) {
+        setIsActive(true);
+        setIsBreak(false);
+      }
     }
-  }, [animateTime, isActive]);
+  }, [animateTime, isActive, isBreak]);
 
   return {
     handleMaskAnimation: toggleActive,
