@@ -4,17 +4,17 @@ const Base = styled.button`
   position: relative;
   margin: 50px;
   border: none;
-  
+
   background: transparent;
-  
+
   font-size: 16px;
   text-align: center;
   line-height: 1.5;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.87);
-  
+
   cursor: pointer;
-  
+
   .button-text-wrapper {
     display: block;
     width: 100%;
