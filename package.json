@@ -25,6 +25,11 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/prettier --write ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -47,6 +52,7 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",
+    "husky": "^4.3.0",
     "prettier": "^2.1.2"
   }
 }

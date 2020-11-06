@@ -57,7 +57,7 @@ const Button: React.FC<Props> = (props) => {
         onClick(e);
       }
     },
-    [buttonPlace, handleMaskAnimation, onClick],
+    [buttonPlace, handleMaskAnimation, onClick]
   );
 
   return (
