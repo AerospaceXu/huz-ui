@@ -1,11 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 
-import { MaskPosition } from './interfaces/mask-position'
+import { MaskPosition } from './interfaces/mask-position';
 
 interface Style {
   maskRadius: number;
-  maskPosition: MaskPosition | null;
+  maskPosition: MaskPosition | null
   zoomTime: number;
 }
 
@@ -63,10 +63,10 @@ interface Props {
 }
 
 const ButtonMask: React.FC<Props> = (props) => {
-  const { buttonSize, animateTime, clickPosition } = props;
+  const { buttonSize, animateTime, clickPosition } = props
 
   const [maskRadius, setMaskRadius] = useState<number>(
-    getString(buttonSize.width, buttonSize.height)
+    getString(buttonSize.width, buttonSize.height),
   );
   const [maskPosition, setMaskPosition] = useState<MaskPosition | null>(null);
 

@@ -14,7 +14,7 @@ import { MaskPosition } from './interfaces/mask-position';
 
 import { useMask } from './hooks/useMask';
 
-const ANIMATE_TIME = 400;
+const ANIMATE_TIME = 375;
 
 interface Props {
   onClick?: MouseEventHandler<HTMLButtonElement>;
