@@ -26,6 +26,7 @@ const zoom = keyframes`
 `;
 
 const Wrapper = styled.span<Style>`
+  pointer-events: none;
   overflow: hidden;
   position: absolute;
   left: 0;

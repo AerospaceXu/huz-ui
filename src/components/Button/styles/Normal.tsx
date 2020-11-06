@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shadow } from '../../../lib/styles/shadow';
 
 const Normal = styled.span`
   display: block;
@@ -9,6 +10,16 @@ const Normal = styled.span`
   border-radius: 4px;
 
   color: rgba(0, 0, 0, 1);
+  
+  transition: 175ms linear;
+  
+  &:hover {
+    box-shadow: ${shadow[3]};
+  }
+  
+  &:active {
+    box-shadow: none;
+  }
 `;
 
 export default Normal;

@@ -4,6 +4,7 @@ const Base = styled.button`
   position: relative;
   margin: 50px;
   border: none;
+  outline: none;
 
   background: transparent;
 
