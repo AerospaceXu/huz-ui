@@ -1,9 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 
+import { MaskPosition } from './interfaces/mask-position';
+
 interface Style {
   maskRadius: number;
-  maskPlace: number[];
+  maskPosition: MaskPosition | null;
   zoomTime: number;
 }
 
@@ -33,8 +35,8 @@ const Wrapper = styled.span<Style>`
 
   > span {
     position: absolute;
-    left: ${(p) => (p.maskPlace[0] === -1 ? '50%' : p.maskPlace[0] + 'px')};
-    top: ${(p) => (p.maskPlace[0] === -1 ? '50%' : p.maskPlace[1] + 'px')};
+    left: ${(p) => (!p.maskPosition ? '50%' : p.maskPosition.left + 'px')};
+    top: ${(p) => (!p.maskPosition ? '50%' : p.maskPosition.top + 'px')};
     transform: translate(-50%, -50%);
 
     background: rgba(255, 255, 255, 0.32);
@@ -56,37 +58,40 @@ interface Props {
     width: number;
     height: number;
   };
-  clickPlace: number[];
+  clickPosition: MaskPosition | null;
   animateTime: number;
 }
 
 const ButtonMask: React.FC<Props> = (props) => {
-  const { buttonSize, animateTime, clickPlace } = props;
+  const { buttonSize, animateTime, clickPosition } = props;
 
   const [maskRadius, setMaskRadius] = useState<number>(
-    getString(buttonSize.width, buttonSize.height)
+    getString(buttonSize.width, buttonSize.height),
   );
-  const [maskPlace, setMaskPlace] = useState<number[]>([-1, -1]);
+  const [maskPosition, setMaskPosition] = useState<MaskPosition | null>(null);
 
   useEffect(() => {
-    if (clickPlace[0] !== -1) {
+    if (clickPosition) {
+      const { left, top } = clickPosition;
       const x =
-        clickPlace[0] > buttonSize.width / 2
-          ? clickPlace[0]
-          : buttonSize.width - clickPlace[0];
+        left > buttonSize.width / 2
+          ? left
+          : buttonSize.width - left;
       const y =
-        clickPlace[1] > buttonSize.height / 2
-          ? clickPlace[1]
-          : buttonSize.height - clickPlace[1];
-      setMaskRadius(getString(x, y));
+        top > buttonSize.height / 2
+          ? top
+          : buttonSize.height - top;
+      const radius = getString(x, y);
+
+      setMaskRadius(radius);
+      setMaskPosition({ ...clickPosition });
     }
-    setMaskPlace([...clickPlace]);
-  }, [buttonSize, clickPlace]);
+  }, [buttonSize, clickPosition]);
 
   return (
     <Wrapper
       maskRadius={maskRadius}
-      maskPlace={maskPlace}
+      maskPosition={maskPosition}
       zoomTime={animateTime}
     >
       <span />

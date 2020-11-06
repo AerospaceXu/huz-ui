@@ -10,6 +10,8 @@ import Base from './styles/Base';
 import ButtonMask from './ButtonMask';
 import Normal from './styles/Normal';
 
+import { MaskPosition } from './interfaces/mask-position';
+
 import { useMask } from './hooks/useMask';
 
 const ANIMATE_TIME = 400;
@@ -38,7 +40,7 @@ const Button: React.FC<Props> = (props) => {
     setButtonPlace(button.current?.getBoundingClientRect() || null);
   }, []);
 
-  const [clickPlace, setClickPlace] = useState<number[]>([-1, -1]);
+  const [clickPlace, setClickPlace] = useState<MaskPosition | null>(null);
 
   const { handleMaskAnimation, maskVisible } = useMask(ANIMATE_TIME);
 
@@ -48,14 +50,14 @@ const Button: React.FC<Props> = (props) => {
       if (buttonPlace) {
         left = e.pageX - buttonPlace.left;
         top = e.pageY - buttonPlace.top;
-        setClickPlace([left, top]);
+        setClickPlace({ left, top });
       }
       handleMaskAnimation();
       if (onClick) {
         onClick(e);
       }
     },
-    [buttonPlace, handleMaskAnimation, onClick]
+    [buttonPlace, handleMaskAnimation, onClick],
   );
 
   return (
@@ -63,7 +65,7 @@ const Button: React.FC<Props> = (props) => {
       {maskVisible && (
         <ButtonMask
           buttonSize={buttonSize}
-          clickPlace={clickPlace}
+          clickPosition={clickPlace}
           animateTime={ANIMATE_TIME}
         />
       )}
