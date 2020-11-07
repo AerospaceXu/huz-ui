@@ -16,6 +16,8 @@ const Base = styled.button`
 
   cursor: pointer;
 
+  transition: 175ms linear;
+
   .button-text-wrapper {
     display: block;
     width: 100%;
