@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export const useMask = (animateTime: number) => {
+const useMask = (animateTime: number) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isBreak, setIsBreak] = useState<boolean>(false);
   const [timer, setTimer] = useState<number>(0);
@@ -18,11 +18,9 @@ export const useMask = (animateTime: number) => {
   useEffect(() => {
     if (isActive) {
       setTimer(setTimeout(() => setIsActive(false), animateTime));
-    } else {
-      if (isBreak) {
-        setIsActive(true);
-        setIsBreak(false);
-      }
+    } else if (isBreak) {
+      setIsActive(true);
+      setIsBreak(false);
     }
   }, [animateTime, isActive, isBreak]);
 
@@ -31,3 +29,5 @@ export const useMask = (animateTime: number) => {
     maskVisible: isActive,
   };
 };
+
+export default useMask;

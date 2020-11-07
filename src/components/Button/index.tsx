@@ -13,7 +13,7 @@ import ButtonMask from './ButtonMask';
 import { MaskPosition } from './interfaces/mask-position';
 import { ButtonType } from './interfaces/button-type';
 
-import { useMask } from './hooks/useMask';
+import useMask from './hooks/useMask';
 
 const ANIMATE_TIME = 375;
 

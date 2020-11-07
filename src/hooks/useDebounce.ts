@@ -1,4 +1,4 @@
-export const useDebounce = (fn: any, gap: number) => {
+const useDebounce = (fn: any, gap: number) => {
   let timer: number | null = null;
   return () => {
     if (timer) {
@@ -10,3 +10,5 @@ export const useDebounce = (fn: any, gap: number) => {
     }, gap);
   };
 };
+
+export default useDebounce;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { shadow } from '../../../lib/styles/shadow';
+import shadow from '../../../lib/styles/shadow';
 
 const Normal = styled.span`
   display: block;

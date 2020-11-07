@@ -31,6 +31,9 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/prop-types': 0,
+    'max-len': [2, { code: 80, ignoreUrls: true, ignoreStrings: true }],
+    'implicit-arrow-linebreak': 0,
+    'arrow-body-style': ['error', 'as-needed'],
   },
   settings: {
     'import/resolver': {

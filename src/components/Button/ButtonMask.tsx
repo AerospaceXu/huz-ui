@@ -36,8 +36,8 @@ const Wrapper = styled.span<Style>`
 
   > span {
     position: absolute;
-    left: ${(p) => (!p.maskPosition ? '50%' : p.maskPosition.left + 'px')};
-    top: ${(p) => (!p.maskPosition ? '50%' : p.maskPosition.top + 'px')};
+    left: ${(p) => (!p.maskPosition ? '50%' : `${p.maskPosition.left}px`)};
+    top: ${(p) => (!p.maskPosition ? '50%' : `${p.maskPosition.top}px`)};
     transform: translate(-50%, -50%);
 
     background: rgba(255, 255, 255, 0.32);
@@ -50,9 +50,8 @@ const Wrapper = styled.span<Style>`
   }
 `;
 
-const getString = (hook: number, strands: number) => {
-  return Math.sqrt(Math.pow(hook, 2) + Math.pow(strands, 2));
-};
+const getString = (hook: number, strands: number) =>
+  Math.sqrt(hook ** 2 + strands ** 2);
 
 interface Props {
   buttonSize: {
@@ -67,7 +66,7 @@ const ButtonMask: React.FC<Props> = (props) => {
   const { buttonSize, animateTime, clickPosition } = props;
 
   const [maskRadius, setMaskRadius] = useState<number>(
-    getString(buttonSize.width, buttonSize.height)
+    getString(buttonSize.width, buttonSize.height),
   );
   const [maskPosition, setMaskPosition] = useState<MaskPosition | null>(null);
 
