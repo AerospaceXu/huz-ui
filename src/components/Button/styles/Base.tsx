@@ -15,6 +15,7 @@ const Base = styled.button`
   color: rgba(0, 0, 0, 0.87);
 
   cursor: pointer;
+  user-select: none;
 
   transition: 275ms linear;
 

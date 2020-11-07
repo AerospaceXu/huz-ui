@@ -10,8 +10,6 @@ const Normal = styled.span`
   background: #90caf9;
   border-radius: 4px;
 
-  color: rgba(0, 0, 0, 1);
-
   transition: 175ms linear;
 
   &:hover {

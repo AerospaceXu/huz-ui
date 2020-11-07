@@ -1,7 +1,9 @@
 import React, { MouseEventHandler, useCallback, useState } from 'react';
+import { StyledComponent } from 'styled-components';
 
 import Base from './styles/Base';
 import Normal from './styles/Normal';
+import Danger from './styles/Danger';
 import ButtonMask from './ButtonMask';
 
 import { MaskPosition } from './interfaces/mask-position';
@@ -10,7 +12,14 @@ import { ButtonType } from './interfaces/button-type';
 import useButton from './hooks/useButton';
 import useMask from './hooks/useMask';
 
-const ANIMATE_TIME = 275;
+const ANIMATE_TIME = 375;
+
+const typeHash: {
+  [key: string]: StyledComponent<'span', any, {}, never>;
+} = {
+  normal: Normal,
+  danger: Danger,
+};
 
 interface Props {
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -18,7 +27,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { onClick, type } = props;
+  const { onClick, type, children } = props;
 
   const {
     buttonRef, buttonPlace, buttonSize, computeClickPlace,
@@ -43,6 +52,8 @@ const Button: React.FC<Props> = (props) => {
     [buttonPlace, handleMaskAnimation, onClick],
   );
 
+  const StyleWrapper = type ? typeHash[type] : Normal;
+
   return (
     <Base ref={buttonRef} onClick={handleClick}>
       {maskVisible && (
@@ -52,10 +63,10 @@ const Button: React.FC<Props> = (props) => {
           animateTime={ANIMATE_TIME}
         />
       )}
-      {type}
-      <Normal>
-        <span className="button-text-wrapper">按钮</span>
-      </Normal>
+
+      <StyleWrapper>
+        <span className="button-text-wrapper">{children}</span>
+      </StyleWrapper>
     </Base>
   );
 };

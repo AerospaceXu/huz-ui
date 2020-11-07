@@ -10,6 +10,8 @@ const Danger = styled.span`
 
   background: #ff4d4f;
 
+  transition: 175ms linear;
+
   &:hover {
     box-shadow: ${shadow[3]};
   }

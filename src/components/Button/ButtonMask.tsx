@@ -40,7 +40,7 @@ const Wrapper = styled.span<Style>`
     top: ${(p) => (!p.maskPosition ? '50%' : `${p.maskPosition.top}px`)};
     transform: translate(-50%, -50%);
 
-    background: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.24);
     width: ${(p) => p.maskRadius * 2}px;
     height: ${(p) => p.maskRadius * 2}px;
     border-radius: 50%;
