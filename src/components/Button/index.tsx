@@ -10,7 +10,7 @@ import { ButtonType } from './interfaces/button-type';
 import useButton from './hooks/useButton';
 import useMask from './hooks/useMask';
 
-const ANIMATE_TIME = 375;
+const ANIMATE_TIME = 275;
 
 interface Props {
   onClick?: MouseEventHandler<HTMLButtonElement>;

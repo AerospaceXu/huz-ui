@@ -12,6 +12,8 @@ const Normal = styled.span`
 
   color: rgba(0, 0, 0, 1);
 
+  transition: 175ms linear;
+
   &:hover {
     box-shadow: ${shadow[3]};
   }
