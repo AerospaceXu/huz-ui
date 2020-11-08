@@ -1,9 +1,6 @@
 import React, { MouseEventHandler, useCallback, useState } from 'react';
-import { StyledComponent } from 'styled-components';
 
 import Base from './styles/Base';
-import Normal from './styles/Normal';
-import Danger from './styles/Danger';
 import ButtonMask from './ButtonMask';
 
 import { MaskPosition } from './interfaces/mask-position';
@@ -15,19 +12,22 @@ import useMask from './hooks/useMask';
 const ANIMATE_TIME = 375;
 
 const typeHash: {
-  [key: string]: StyledComponent<'span', any, {}, never>;
+  [key: string]: string;
 } = {
-  normal: Normal,
-  danger: Danger,
+  normal: 'normal-button',
+  danger: 'danger-button',
 };
 
 interface Props {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: ButtonType;
+  isContained?: boolean;
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { onClick, type, children } = props;
+  const {
+    onClick, type, isContained, children,
+  } = props;
 
   const {
     buttonRef, buttonPlace, buttonSize, computeClickPlace,
@@ -52,10 +52,15 @@ const Button: React.FC<Props> = (props) => {
     [buttonPlace, handleMaskAnimation, onClick],
   );
 
-  const StyleWrapper = type ? typeHash[type] : Normal;
+  const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
 
   return (
-    <Base ref={buttonRef} onClick={handleClick}>
+    <Base
+      className={buttonExtraClassName}
+      ref={buttonRef}
+      onClick={handleClick}
+      isContained={isContained !== undefined ? isContained : true}
+    >
       {maskVisible && (
         <ButtonMask
           buttonSize={buttonSize}
@@ -63,10 +68,7 @@ const Button: React.FC<Props> = (props) => {
           animateTime={ANIMATE_TIME}
         />
       )}
-
-      <StyleWrapper>
-        <span className="button-text-wrapper">{children}</span>
-      </StyleWrapper>
+      {children}
     </Base>
   );
 };

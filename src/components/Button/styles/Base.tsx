@@ -1,29 +1,56 @@
 import styled from 'styled-components';
 
-const Base = styled.button`
+import shadow from '../../../lib/styles/shadow';
+
+import normal from './normal';
+import danger from './danger';
+
+interface StyleProps {
+  isContained: boolean;
+}
+
+const Base = styled.button<StyleProps>`
   position: relative;
   margin: 50px;
-  border: none;
+  padding: 4px 12px;
+  border: 2px solid transparent;
   outline: none;
 
   background: transparent;
 
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
 
   cursor: pointer;
   user-select: none;
 
-  transition: 275ms linear;
+  transition: 195ms linear;
 
-  .button-text-wrapper {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 6px 16px;
+  &:hover {
+    box-shadow: ${shadow[3]};
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &.normal-button {
+    ${(p) => normal(p.isContained)}
+
+    &:hover {
+      ${(p) => normal(p.isContained, true)}
+    }
+  }
+
+  &.danger-button {
+    ${(p) => danger(p.isContained)}
+
+    &:hover {
+      ${(p) => danger(p.isContained, true)}
+    }
   }
 `;
 
