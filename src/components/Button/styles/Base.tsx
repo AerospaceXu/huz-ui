@@ -4,6 +4,7 @@ import shadow from '../../../lib/styles/shadow';
 
 import normal from './normal';
 import danger from './danger';
+import color from '../../../lib/styles/color';
 
 interface StyleProps {
   isContained: boolean;
@@ -50,6 +51,15 @@ const Base = styled.button<StyleProps>`
 
     &:hover {
       ${(p) => danger(p.isContained, true)}
+    }
+  }
+
+  &.link-button {
+    color: rgba(0, 0, 0, 0.87);
+
+    &:hover {
+      color: ${color.light.blue};
+      box-shadow: none;
     }
   }
 `;

@@ -16,6 +16,7 @@ const typeHash: {
 } = {
   normal: 'normal-button',
   danger: 'danger-button',
+  link: 'link-button',
 };
 
 interface Props {
@@ -61,7 +62,7 @@ const Button: React.FC<Props> = (props) => {
       onClick={handleClick}
       isContained={isContained !== undefined ? isContained : true}
     >
-      {maskVisible && (
+      {maskVisible && type !== 'link' && (
         <ButtonMask
           buttonSize={buttonSize}
           clickPosition={clickPlace}

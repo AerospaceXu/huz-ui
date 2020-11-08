@@ -11,6 +11,7 @@ const Home: React.FC = () => (
     <Button type="danger" isContained={false}>
       警告按钮
     </Button>
+    <Button type="link">链接按钮</Button>
   </div>
 );
 
