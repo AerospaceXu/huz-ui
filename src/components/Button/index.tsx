@@ -20,6 +20,7 @@ const typeHash: {
 };
 
 interface Props {
+  className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: ButtonType;
   isContained?: boolean;
@@ -27,7 +28,7 @@ interface Props {
 
 const Button: React.FC<Props> = (props) => {
   const {
-    onClick, type, isContained, children,
+    onClick, type, isContained, children, className,
   } = props;
 
   const {
@@ -57,7 +58,7 @@ const Button: React.FC<Props> = (props) => {
 
   return (
     <Base
-      className={buttonExtraClassName}
+      className={`${buttonExtraClassName} ${className || ''}`}
       ref={buttonRef}
       onClick={handleClick}
       isContained={isContained !== undefined ? isContained : true}
