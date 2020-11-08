@@ -1,7 +1,7 @@
 import color from '../../../lib/styles/color';
 
 const normal = (isContained: boolean, isHover = false) =>
-  (isHover
+  (isHover && !isContained
     ? {
       color: '#FFFFFF',
       'border-color': color.light.blue,

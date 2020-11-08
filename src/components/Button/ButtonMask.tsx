@@ -29,10 +29,10 @@ const Wrapper = styled.span<Style>`
   pointer-events: none;
   overflow: hidden;
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: -2px;
+  top: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
 
   > span {
     position: absolute;
