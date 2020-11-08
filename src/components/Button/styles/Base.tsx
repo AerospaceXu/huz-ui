@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import shadow from '../../../lib/styles/shadow';
+import color from '../../../lib/styles/color';
 
 import normal from './normal';
 import danger from './danger';
-import color from '../../../lib/styles/color';
+import disable from './disable';
 
 interface StyleProps {
   isContained: boolean;
@@ -59,6 +60,15 @@ const Base = styled.button<StyleProps>`
 
     &:hover {
       color: ${color.light.blue};
+      box-shadow: none;
+    }
+  }
+
+  &.disable-button {
+    ${(p) => disable(p.isContained)}
+
+    &:hover {
+      ${(p) => disable(p.isContained, true)}
       box-shadow: none;
     }
   }

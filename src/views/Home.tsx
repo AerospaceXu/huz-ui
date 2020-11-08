@@ -12,6 +12,15 @@ const Home: React.FC = () => (
       警告按钮
     </Button>
     <Button type="link">链接按钮</Button>
+    <Button
+      type="danger"
+      disable
+      onClick={() => {
+        console.log('我点击了');
+      }}
+    >
+      链接按钮
+    </Button>
   </div>
 );
 

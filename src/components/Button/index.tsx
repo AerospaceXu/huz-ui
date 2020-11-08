@@ -24,11 +24,12 @@ interface Props {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: ButtonType;
   isContained?: boolean;
+  disable?: boolean;
 }
 
 const Button: React.FC<Props> = (props) => {
   const {
-    onClick, type, isContained, children, className,
+    onClick, type, isContained, disable, children, className,
   } = props;
 
   const {
@@ -41,6 +42,9 @@ const Button: React.FC<Props> = (props) => {
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (disable) {
+        return;
+      }
       const clickRes = computeClickPlace(e);
       if (clickRes) {
         const { left, top } = clickRes;
@@ -56,9 +60,13 @@ const Button: React.FC<Props> = (props) => {
 
   const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
 
+  const buttonClassName = `${className} ${
+    disable ? 'disable-button' : buttonExtraClassName
+  }`;
+
   return (
     <Base
-      className={`${buttonExtraClassName} ${className || ''}`}
+      className={buttonClassName}
       ref={buttonRef}
       onClick={handleClick}
       isContained={isContained !== undefined ? isContained : true}
