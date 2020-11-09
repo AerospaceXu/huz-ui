@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import color from '../../../lib/styles/color';
+import fontBase from '../../../lib/styles/font-base';
 
 interface StyleProps {
   inputWidth: number;
@@ -11,12 +12,25 @@ interface StyleProps {
 }
 
 const InputWrapper = styled.div<StyleProps>`
+  box-sizing: border-box;
+
+  div,
+  span {
+    box-sizing: border-box;
+  }
+
   margin: 40px;
   width: ${(p) => p.inputWidth}px;
   height: auto;
 
   position: relative;
   display: flex;
+
+  font-size: ${fontBase['font-size']};
+  line-height: 1.572;
+  font-weight: 400;
+  color: ${fontBase.color};
+  font-family: ${fontBase['font-family']};
 
   > .input-border {
     position: absolute;
@@ -42,8 +56,7 @@ const InputWrapper = styled.div<StyleProps>`
     width: 100%;
     border-radius: 4px;
     border: 2px solid rgba(0, 0, 0, 0.32);
-    padding: 10px;
-    padding-top: 0;
+    padding: 0 10px 10px;
 
     position: relative;
 
@@ -90,7 +103,6 @@ const InputWrapper = styled.div<StyleProps>`
     }
 
     > label {
-      display: block;
       width: 100%;
       height: auto;
       display: flex;
