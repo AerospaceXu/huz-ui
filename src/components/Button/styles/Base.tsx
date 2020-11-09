@@ -27,7 +27,7 @@ const Base = styled.button<StyleProps>`
   text-align: center;
   line-height: 1.572;
   font-weight: 500;
-  color: ${fontBase.color};
+  color: #ffffff;
   font-family: ${fontBase['font-family']};
 
   cursor: pointer;
