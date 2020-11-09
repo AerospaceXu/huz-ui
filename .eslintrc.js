@@ -34,6 +34,8 @@ module.exports = {
     'max-len': [2, { code: 80, ignoreUrls: true, ignoreStrings: true }],
     'implicit-arrow-linebreak': 0,
     'arrow-body-style': ['error', 'as-needed'],
+    'no-unused-vars': 0,
+    'no-nested-ternary': 0,
   },
   settings: {
     'import/resolver': {
