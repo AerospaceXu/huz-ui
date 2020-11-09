@@ -21,7 +21,7 @@ const Home: React.FC = () => {
         链接按钮
       </Button>
       <br />
-      <Input value={value} onChange={handleInputChange} />
+      <Input label="姓名" value={value} onChange={handleInputChange} />
     </div>
   );
 };

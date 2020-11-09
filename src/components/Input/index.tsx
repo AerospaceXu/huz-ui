@@ -7,12 +7,16 @@ import InputWrapper from './style/base';
 import useInput from './hooks/useInput';
 
 interface Props {
+  label: string;
   value: string;
+  inputWidth?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<Props> = (props) => {
-  const { value, onChange } = props;
+  const {
+    label, value, inputWidth, onChange,
+  } = props;
 
   const { input, inputSize } = useInput();
 
@@ -69,13 +73,13 @@ const Input: React.FC<Props> = (props) => {
   };
 
   return (
-    <InputWrapper inputSize={inputSize}>
+    <InputWrapper inputWidth={inputWidth || 200} inputSize={inputSize}>
       <fieldset className={fieldsetClass}>
-        <label htmlFor="xxx">
+        <label htmlFor={label}>
           <input
             ref={input}
-            id="xxx"
-            name="xxx"
+            id={label}
+            name={label}
             type="text"
             value={value}
             onChange={handleInput}
@@ -85,7 +89,7 @@ const Input: React.FC<Props> = (props) => {
             onMouseLeave={() => setIsHover(false)}
           />
         </label>
-        <legend className={legendClass}>这是一个表单ttt</legend>
+        <legend className={legendClass}>{label}</legend>
       </fieldset>
       <div className={`input-border ${borderClass}`} />
     </InputWrapper>

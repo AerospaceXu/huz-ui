@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import color from '../../../lib/styles/color';
 
 interface StyleProps {
+  inputWidth: number;
   inputSize: {
     width: number;
     height: number;
@@ -11,7 +12,7 @@ interface StyleProps {
 
 const InputWrapper = styled.div<StyleProps>`
   margin: 40px;
-  width: 200px;
+  width: ${(p) => p.inputWidth}px;
   height: auto;
 
   position: relative;
@@ -21,13 +22,12 @@ const InputWrapper = styled.div<StyleProps>`
     position: absolute;
     left: 0;
     top: ${(p) => p.inputSize.height / 2}px;
-    width: ${(p) => p.inputSize.width + 18}px;
+    width: 100%;
     height: calc(100% - ${(p) => p.inputSize.height / 2}px);
     border-radius: 4px;
     border: 2px solid rgba(0, 0, 0, 0.32);
 
     pointer-events: none;
-    transition: 125ms linear;
 
     &.transparent-border {
       border-color: transparent;
@@ -39,6 +39,7 @@ const InputWrapper = styled.div<StyleProps>`
   }
 
   > fieldset {
+    width: 100%;
     border-radius: 4px;
     border: 2px solid rgba(0, 0, 0, 0.32);
     padding: 10px;
@@ -47,6 +48,8 @@ const InputWrapper = styled.div<StyleProps>`
     position: relative;
 
     display: flex;
+
+    transition: 125ms linear;
 
     &.focused-fieldset {
       border-color: ${color.light.blue};
@@ -88,11 +91,12 @@ const InputWrapper = styled.div<StyleProps>`
 
     > label {
       display: block;
-      width: auto;
+      width: 100%;
       height: auto;
       display: flex;
 
       > input {
+        width: 100%;
         padding: 4px 4px;
         border: none;
         outline: none;
