@@ -8,7 +8,7 @@ export default {
     'react-dom': 'ReactDOM',
   },
   output: {
-    file: 'dist/index.js',
+    file: 'huz-ui/index.js',
     format: 'es',
   },
   plugins: [
