@@ -1,7 +1,7 @@
 import typescript from 'rollup-plugin-typescript2';
 
 export default {
-  input: 'src/index.tsx',
+  input: 'src/library.tsx',
   external: ['react', 'react-dom'],
   globals: {
     react: 'React',
