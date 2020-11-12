@@ -19,7 +19,6 @@ const InputWrapper = styled.div<StyleProps>`
     box-sizing: border-box;
   }
 
-  margin: 40px;
   width: ${(p) => p.inputWidth}px;
   height: auto;
 

@@ -16,7 +16,6 @@ const Base = styled.button<StyleProps>`
   box-sizing: border-box;
 
   position: relative;
-  margin: 50px;
   padding: 4px 12px;
   border: 2px solid transparent;
   outline: none;
