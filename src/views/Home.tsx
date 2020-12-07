@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import Main from '../Layouts/Main';
 import Input from '../components/Input';
 
 const Wrapper = styled.div`
@@ -17,7 +18,9 @@ const Home: React.FC = () => {
     setValue(e.target.value);
   return (
     <Wrapper>
-      <Input label="姓名" value={value} onChange={handleInputChange} />
+      <Main>
+        <Input label="姓名" value={value} onChange={handleInputChange} />
+      </Main>
     </Wrapper>
   );
 };

@@ -36,6 +36,7 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'no-unused-vars': 0,
     'no-nested-ternary': 0,
+    'react/destructuring-assignment': 0,
   },
   settings: {
     'import/resolver': {
