@@ -23,8 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/prettier --write 'src/**' && ./node_modules/.bin/eslint --fix 'src/**' && ./node_modules/.bin/eslint .",
-    "rollup": "rollup -c ./rollup.config.js"
+    "lint": "./node_modules/.bin/prettier --write 'src/**' && ./node_modules/.bin/eslint --fix 'src/**' && ./node_modules/.bin/eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +45,6 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.6",
-    "@types/react-transition-group": "^4.4.0",
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
@@ -58,7 +56,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
-    "prettier": "^2.1.2",
-    "rollup-plugin-typescript2": "^0.29.0"
+    "prettier": "^2.1.2"
   }
 }
