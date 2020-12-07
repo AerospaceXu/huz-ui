@@ -18,7 +18,7 @@ const useButton = () => {
       height: button.current?.clientHeight || 0,
     });
     setButtonPlace(button.current?.getBoundingClientRect() || null);
-  }, [buttonSize]);
+  }, [button]);
 
   const computeClickPlace = (
     clickEvent: React.MouseEvent<HTMLButtonElement, MouseEvent>,
