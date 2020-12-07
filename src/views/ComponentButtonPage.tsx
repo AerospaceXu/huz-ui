@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../components/Button';
+import Button from '../ui-kits/Button';
 import Main from '../Layouts/Main';
 
 const Wrapper = styled.div`

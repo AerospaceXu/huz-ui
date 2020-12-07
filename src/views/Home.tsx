@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Main from '../Layouts/Main';
-import Input from '../components/Input';
+import Input from '../ui-kits/Input';
 
 const Wrapper = styled.div`
   width: 100%;
