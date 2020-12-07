@@ -34,9 +34,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
