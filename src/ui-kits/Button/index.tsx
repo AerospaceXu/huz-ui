@@ -32,9 +32,7 @@ const Button: React.FC<Props> = (props) => {
     onClick, type, isContained, disable, children, className,
   } = props;
 
-  const {
-    buttonRef, buttonPlace, buttonSize, computeClickPlace,
-  } = useButton();
+  const { buttonRef, buttonSize, computeClickPlace } = useButton();
 
   const [clickPlace, setClickPlace] = useState<MaskPosition | null>(null);
 
@@ -55,7 +53,7 @@ const Button: React.FC<Props> = (props) => {
         onClick(e);
       }
     },
-    [buttonPlace, handleMaskAnimation, onClick],
+    [computeClickPlace, disable, handleMaskAnimation, onClick],
   );
 
   const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
