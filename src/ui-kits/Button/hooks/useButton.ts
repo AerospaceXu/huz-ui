@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState, useRef, useEffect, useCallback,
+} from 'react';
 
 const useButton = () => {
   const button = useRef<HTMLButtonElement>(null);
@@ -20,21 +22,22 @@ const useButton = () => {
     setButtonPlace(button.current?.getBoundingClientRect() || null);
   }, [button]);
 
-  const computeClickPlace = (
-    clickEvent: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => {
-    let left: number;
-    let top: number;
-    if (buttonPlace) {
-      left = clickEvent.pageX - buttonPlace.left;
-      top = clickEvent.pageY - buttonPlace.top;
-      return {
-        top,
-        left,
-      };
-    }
-    return undefined;
-  };
+  const computeClickPlace = useCallback(
+    (clickEvent: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      let left: number;
+      let top: number;
+      if (buttonPlace) {
+        left = clickEvent.pageX - buttonPlace.left;
+        top = clickEvent.pageY - buttonPlace.top;
+        return {
+          top,
+          left,
+        };
+      }
+      return undefined;
+    },
+    [buttonPlace],
+  );
 
   return {
     buttonRef: button,
