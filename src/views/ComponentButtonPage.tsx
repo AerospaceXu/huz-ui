@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button from '../ui-kits/Button';
-import ComponentShowBlock from '../components/ComponentButtonPage/ComponentShowBlock';
+import ComponentShowBlock from '../components/ComponentShowBlock';
 
 const Wrapper = styled.div`
   width: 100%;

@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import Main from '../Layouts/Main';
-import Input from '../ui-kits/Input';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -12,17 +9,6 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Home: React.FC = () => {
-  const [value, setValue] = useState<string>('');
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setValue(e.target.value);
-  return (
-    <Wrapper>
-      <Main>
-        <Input label="姓名" value={value} onChange={handleInputChange} />
-      </Main>
-    </Wrapper>
-  );
-};
+const Home: React.FC = () => <Wrapper>Home Page Works!!!</Wrapper>;
 
 export default Home;

@@ -47,6 +47,9 @@ const Nav: React.FC = () => (
           按钮
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/components/inputs">输入框</NavLink>
+      </li>
     </ul>
   </Wrapper>
 );
