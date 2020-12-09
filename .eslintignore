@@ -1,6 +1,9 @@
 test
 public
 
+config
+scripts
+
 *.scss
 *.css
 
