@@ -54,11 +54,11 @@ const Input: React.FC<Props> = (props) => {
     setLegendClass(
       isFocused ? 'legend-up legend-color' : hasInput ? 'legend-up' : '',
     );
-  }, [isFocused, isHover, hasInput]);
+  }, [hasInput, isFocused, isHover]);
 
   useEffect(() => {
     getInputState();
-  }, [isFocused, hasInput, isHover]);
+  }, [getInputState]);
 
   const handleFocus = () => {
     setIsFocused(true);
