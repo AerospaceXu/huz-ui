@@ -1,0 +1,36 @@
+.huz-button > .huz-button-mask {
+  pointer-events: none;
+  overflow: hidden;
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  > span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+
+    animation: huz-button-click-animation cubic-bezier(1, 0.5, 0.8, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes huz-button-click-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  61.8% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

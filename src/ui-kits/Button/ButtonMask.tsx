@@ -1,54 +1,8 @@
-import styled, { keyframes } from 'styled-components';
 import React, { useEffect, useState } from 'react';
 
+import './styles/button-mask-style.scss';
+
 import { MaskPosition } from './interfaces/mask-position';
-
-interface Style {
-  maskRadius: number;
-  maskPosition: MaskPosition | null;
-  zoomTime: number;
-}
-
-const zoom = keyframes`
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
-  }
-  
-  61.8% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  
-  100% {
-    opacity: 0;
-  }
-`;
-
-const Wrapper = styled.span<Style>`
-  pointer-events: none;
-  overflow: hidden;
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-
-  > span {
-    position: absolute;
-    left: ${(p) => (!p.maskPosition ? '50%' : `${p.maskPosition.left}px`)};
-    top: ${(p) => (!p.maskPosition ? '50%' : `${p.maskPosition.top}px`)};
-    transform: translate(-50%, -50%);
-
-    background: rgba(255, 255, 255, 0.24);
-    width: ${(p) => p.maskRadius * 2}px;
-    height: ${(p) => p.maskRadius * 2}px;
-    border-radius: 50%;
-
-    animation: ${zoom} ${(p) => p.zoomTime}ms cubic-bezier(1, 0.5, 0.8, 1);
-    opacity: 0;
-  }
-`;
 
 const getString = (hook: number, strands: number) =>
   Math.sqrt(hook ** 2 + strands ** 2);
@@ -83,13 +37,17 @@ const ButtonMask: React.FC<Props> = (props) => {
   }, [buttonSize.height, buttonSize.width, clickPosition]);
 
   return (
-    <Wrapper
-      maskRadius={maskRadius}
-      maskPosition={maskPosition}
-      zoomTime={animateTime}
-    >
-      <span />
-    </Wrapper>
+    <div className="huz-button-mask">
+      <span
+        style={{
+          animationDuration: `${animateTime}ms`,
+          width: `${maskRadius * 2}px`,
+          height: `${maskRadius * 2}px`,
+          left: `${!maskPosition ? '50%' : `${maskPosition.left}px`}`,
+          top: `${!maskPosition ? '50%' : `${maskPosition.top}px`}`,
+        }}
+      />
+    </div>
   );
 };
 
