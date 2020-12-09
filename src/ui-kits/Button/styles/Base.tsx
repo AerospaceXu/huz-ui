@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import shadow from '../../../lib/styles/shadow';
 import color from '../../../lib/styles/color';
 
 import normal from './normal';
@@ -12,30 +11,6 @@ interface StyleProps {
 }
 
 const Base = styled.button<StyleProps>`
-  position: relative;
-  padding: 4px 12px;
-  border: 2px solid transparent;
-  outline: none;
-
-  background: transparent;
-
-  text-align: center;
-  font-weight: 500;
-  color: #ffffff;
-
-  cursor: pointer;
-  user-select: none;
-
-  transition: 195ms linear;
-
-  &:hover {
-    box-shadow: ${shadow[3]};
-  }
-
-  &:active {
-    box-shadow: none;
-  }
-
   &.normal-button {
     ${(p) => normal(p.isContained)}
     &:hover {

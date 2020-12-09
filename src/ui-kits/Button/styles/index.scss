@@ -1,3 +1,64 @@
 .huz-button {
-  transform: rotate(90deg);
+  position: relative;
+
+  padding: 4px 12px;
+  border: 2px solid transparent;
+  outline: none;
+  background: transparent;
+
+  text-align: center;
+  font-weight: 500;
+  color: #ffffff;
+
+  cursor: pointer;
+  user-select: none;
+  transition: 195ms linear;
+
+  &:hover {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.14), 0 3px 3px rgba(0, 0, 0, 0.12),
+      0 1px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &.huz-button-contained {
+    border-radius: 12px;
+  }
+
+  &.huz-normal-button {
+    color: rgba(0, 0, 0, 0.87);
+    border: 2px solid rgba(0, 0, 0, 0.54);
+  }
+
+  &.huz-primary-button {
+    color: #007aff;
+    border-color: inherit;
+
+    &:hover,
+    &.huz-button-contained {
+      color: #ffffff;
+      background: #007aff;
+    }
+  }
+
+  &.huz-danger-button {
+    color: #ff3b30;
+    border-color: inherit;
+
+    &:hover,
+    &.huz-button-contained {
+      color: #ffffff;
+      background: #ff3b30;
+    }
+  }
+
+  &.huz-link-button {
+    color: #007aff;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
 }
