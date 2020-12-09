@@ -66,9 +66,10 @@
   }
 
   &.huz-link-button {
-    color: #007aff;
+    color: lighten(#007aff, 5%);
 
     &:hover {
+      color: darken(#007aff, 5%);
       box-shadow: none;
     }
   }
