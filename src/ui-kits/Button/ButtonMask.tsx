@@ -80,7 +80,7 @@ const ButtonMask: React.FC<Props> = (props) => {
       setMaskRadius(radius);
       setMaskPosition({ ...clickPosition });
     }
-  }, [buttonSize, clickPosition]);
+  }, [buttonSize.height, buttonSize.width, clickPosition]);
 
   return (
     <Wrapper
