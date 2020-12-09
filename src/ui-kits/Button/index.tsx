@@ -2,7 +2,6 @@ import React, { MouseEventHandler, useCallback, useState } from 'react';
 
 import './styles/index.scss';
 
-import Base from './styles/Base';
 import ButtonMask from './ButtonMask';
 
 import { MaskPosition } from './interfaces/mask-position';
@@ -16,9 +15,10 @@ const ANIMATE_TIME = 375;
 const typeHash: {
   [key: string]: string;
 } = {
-  normal: 'normal-button',
-  danger: 'danger-button',
-  link: 'link-button',
+  normal: 'huz-normal-button',
+  primary: 'huz-primary-button',
+  danger: 'huz-danger-button',
+  link: 'huz-link-button',
 };
 
 interface Props {
@@ -60,17 +60,14 @@ const Button: React.FC<Props> = (props) => {
 
   const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
 
-  const buttonClassName = `huz-button ${className} ${
-    disable ? 'disable-button' : buttonExtraClassName
+  const buttonClassName = `huz-button ${
+    isContained === undefined || isContained ? 'huz-button-contained' : ''
+  } ${disable ? 'huz-disable-button' : buttonExtraClassName} ${
+    className || ''
   }`;
 
   return (
-    <Base
-      className={buttonClassName}
-      ref={buttonRef}
-      onClick={handleClick}
-      isContained={isContained !== undefined ? isContained : true}
-    >
+    <button className={buttonClassName} ref={buttonRef} onClick={handleClick}>
       {maskVisible && type !== 'link' && (
         <ButtonMask
           buttonSize={buttonSize}
@@ -79,7 +76,7 @@ const Button: React.FC<Props> = (props) => {
         />
       )}
       {children}
-    </Base>
+    </button>
   );
 };
 

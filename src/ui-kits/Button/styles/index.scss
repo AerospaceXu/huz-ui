@@ -24,7 +24,18 @@
   }
 
   &.huz-button-contained {
-    border-radius: 12px;
+    border-radius: 4px;
+  }
+
+  &.huz-disable-button {
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.15);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 
   &.huz-normal-button {
@@ -34,7 +45,7 @@
 
   &.huz-primary-button {
     color: #007aff;
-    border-color: inherit;
+    border-color: #007aff;
 
     &:hover,
     &.huz-button-contained {
@@ -45,7 +56,7 @@
 
   &.huz-danger-button {
     color: #ff3b30;
-    border-color: inherit;
+    border-color: #ff3b30;
 
     &:hover,
     &.huz-button-contained {

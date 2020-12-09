@@ -15,11 +15,15 @@ const ComponentButtonPage: React.FC = () => (
   <Wrapper>
     <ComponentShowBlock title="按钮类型">
       <Button>普通按钮</Button>
+      <Button type="primary">主要按钮</Button>
       <Button type="danger">警告按钮</Button>
       <Button type="link">链接按钮</Button>
     </ComponentShowBlock>
     <ComponentShowBlock title="实心与空心">
       <Button isContained={false}>普通按钮</Button>
+      <Button isContained={false} type="primary">
+        主要按钮
+      </Button>
       <Button type="danger" isContained={false}>
         警告按钮
       </Button>

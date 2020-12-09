@@ -41,6 +41,8 @@ module.exports = {
     'no-unused-vars': 0,
     'no-nested-ternary': 0,
     'react/destructuring-assignment': 0,
+    'react/button-has-type': 0,
+    'react/no-danger': 0,
   },
   settings: {
     'import/resolver': {
