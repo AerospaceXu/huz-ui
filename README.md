@@ -2,6 +2,9 @@
 
 `npm i huz-ui` 或 `yarn add huz-ui`。
 
+胡子 UI 参考了 Google Material Design 与 Apple Human Interface Design
+进行设计，旨在打造高效、通用、美观清爽、用户友好的组件库。
+
 例子：
 
 ```tsx
