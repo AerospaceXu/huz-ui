@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import shadow from '../../../lib/styles/shadow';
 import color from '../../../lib/styles/color';
-import fontBase from '../../../lib/styles/font-base';
 
 import normal from './normal';
 import danger from './danger';
@@ -13,8 +12,6 @@ interface StyleProps {
 }
 
 const Base = styled.button<StyleProps>`
-  box-sizing: border-box;
-
   position: relative;
   padding: 4px 12px;
   border: 2px solid transparent;
@@ -22,10 +19,7 @@ const Base = styled.button<StyleProps>`
 
   background: transparent;
 
-  ${fontBase};
-
   text-align: center;
-  line-height: 1.572;
   font-weight: 500;
   color: #ffffff;
 

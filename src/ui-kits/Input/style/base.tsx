@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import color from '../../../lib/styles/color';
-import fontBase from '../../../lib/styles/font-base';
 
 interface StyleProps {
   inputWidth: number;
@@ -12,24 +11,13 @@ interface StyleProps {
 }
 
 const InputWrapper = styled.div<StyleProps>`
-  box-sizing: border-box;
-
-  div,
-  span {
-    box-sizing: border-box;
-  }
-
   width: ${(p) => p.inputWidth}px;
   height: auto;
 
   position: relative;
   display: flex;
 
-  font-size: ${fontBase['font-size']};
-  line-height: 1.572;
   font-weight: 400;
-  color: ${fontBase.color};
-  font-family: ${fontBase['font-family']};
 
   > .input-border {
     position: absolute;

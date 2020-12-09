@@ -1,6 +1,4 @@
-import React, {
-  useRef, useState, useEffect, useCallback,
-} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import InputWrapper from './style/base';
 
@@ -73,7 +71,11 @@ const Input: React.FC<Props> = (props) => {
   };
 
   return (
-    <InputWrapper inputWidth={inputWidth || 200} inputSize={inputSize}>
+    <InputWrapper
+      className="huz-input"
+      inputWidth={inputWidth || 200}
+      inputSize={inputSize}
+    >
       <fieldset className={fieldsetClass}>
         <label htmlFor={label}>
           <input

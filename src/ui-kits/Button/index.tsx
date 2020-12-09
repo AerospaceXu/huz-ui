@@ -1,5 +1,7 @@
 import React, { MouseEventHandler, useCallback, useState } from 'react';
 
+import './styles/index.scss';
+
 import Base from './styles/Base';
 import ButtonMask from './ButtonMask';
 
@@ -58,7 +60,7 @@ const Button: React.FC<Props> = (props) => {
 
   const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
 
-  const buttonClassName = `${className} ${
+  const buttonClassName = `huz-button ${className} ${
     disable ? 'disable-button' : buttonExtraClassName
   }`;
 
