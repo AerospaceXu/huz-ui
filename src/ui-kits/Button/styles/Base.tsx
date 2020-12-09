@@ -22,12 +22,12 @@ const Base = styled.button<StyleProps>`
 
   background: transparent;
 
-  font-size: ${fontBase['font-size']};
+  ${fontBase};
+
   text-align: center;
   line-height: 1.572;
   font-weight: 500;
   color: #ffffff;
-  font-family: ${fontBase['font-family']};
 
   cursor: pointer;
   user-select: none;
@@ -44,7 +44,6 @@ const Base = styled.button<StyleProps>`
 
   &.normal-button {
     ${(p) => normal(p.isContained)}
-
     &:hover {
       ${(p) => normal(p.isContained, true)}
     }
@@ -52,7 +51,6 @@ const Base = styled.button<StyleProps>`
 
   &.danger-button {
     ${(p) => danger(p.isContained)}
-
     &:hover {
       ${(p) => danger(p.isContained, true)}
     }
@@ -69,7 +67,6 @@ const Base = styled.button<StyleProps>`
 
   &.disable-button {
     ${(p) => disable(p.isContained)}
-
     &:hover {
       box-shadow: none;
       ${(p) => disable(p.isContained, true)}

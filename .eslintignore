@@ -1,3 +1,10 @@
 test
 public
+
+*.scss
 *.css
+
+*.spec.tsx
+*.spec.ts
+*.test.tsx
+*.test.ts
