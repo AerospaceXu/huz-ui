@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import ComponentShowBlock from '../components/ComponentShowBlock';
 import Input from '../ui-kits/Input';
 
+import { InputUseCode } from '../docs/codes/Input-demo';
+
 const Wrapper = styled.div`
   width: 100%;
 `;
@@ -15,7 +17,7 @@ const ComponentInputPage: React.FC = () => {
 
   return (
     <Wrapper>
-      <ComponentShowBlock title="Input 样式">
+      <ComponentShowBlock title="Input 样式" code={InputUseCode}>
         <Input label="姓名" value={value} onChange={handleInputChange} />
       </ComponentShowBlock>
     </Wrapper>
