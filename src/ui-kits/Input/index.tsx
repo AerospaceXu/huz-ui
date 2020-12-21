@@ -9,11 +9,13 @@ interface Props {
   value: string;
   inputWidth?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<Props> = (props) => {
   const {
-    label, value, inputWidth, onChange,
+    label, value, inputWidth, onChange, onFocus, onBlur,
   } = props;
 
   const { input, inputSize } = useInput();
@@ -58,11 +60,13 @@ const Input: React.FC<Props> = (props) => {
     getInputState();
   }, [getInputState]);
 
-  const handleFocus = () => {
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(true);
+    onFocus && onFocus(e);
   };
-  const handleBlur = () => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(false);
+    onBlur && onBlur(e);
   };
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {

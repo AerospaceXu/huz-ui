@@ -43,6 +43,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'react/button-has-type': 0,
     'react/no-danger': 0,
+    'no-unused-expressions': 0,
   },
   settings: {
     'import/resolver': {
