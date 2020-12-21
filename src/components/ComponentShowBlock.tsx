@@ -63,12 +63,13 @@ interface Props {
 }
 
 const ComponentShowBlock: React.FC<Props> = (props) => {
+  const { title, code } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [dropContent, setDropContent] = useState<string>('');
 
   return (
     <Wrapper>
-      <h3>{props.title}</h3>
+      <h3>{title}</h3>
       <div className="components">{props.children}</div>
       <div className="tools-bar">
         <button
@@ -80,9 +81,9 @@ const ComponentShowBlock: React.FC<Props> = (props) => {
           <img src={codeIcon} alt="" />
         </button>
       </div>
-      {isVisible && (
+      {code && isVisible && (
         <div className="drop-content">
-          <CodeShowBlock>{props.code}</CodeShowBlock>
+          <CodeShowBlock>{code}</CodeShowBlock>
         </div>
       )}
     </Wrapper>
