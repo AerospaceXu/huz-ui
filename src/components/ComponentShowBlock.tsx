@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import codeIcon from '../assets/code-icon.svg';
+
+import CodeShowBlock from './CodeShowBlock';
+
 const Wrapper = styled.div`
-  width: 400px;
-  padding: 12px 24px 32px;
+  width: calc(100% - 60px);
+  padding: 12px 24px 12px;
   margin: 16px 0 24px;
   border: 1px solid rgba(0, 0, 0, 0.12);
 
@@ -14,23 +18,75 @@ const Wrapper = styled.div`
   }
 
   > .components {
-    margin-top: 16px;
+    margin-top: 8px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
+
+    > * {
+      margin: 12px;
+    }
+  }
+
+  > .tools-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 32px;
+
+    > button {
+      padding: 6px;
+      height: 100%;
+      opacity: 0.32;
+
+      background: transparent;
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+      transition: 125ms;
+
+      &:hover {
+        opacity: 0.72;
+      }
+
+      > img {
+        height: 100%;
+      }
+    }
   }
 `;
 
 interface Props {
   title: string;
+  code?: string;
 }
 
-const ComponentShowBlock: React.FC<Props> = (props) => (
-  <Wrapper>
-    <h3>{props.title}</h3>
-    <div className="components">{props.children}</div>
-  </Wrapper>
-);
+const ComponentShowBlock: React.FC<Props> = (props) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [dropContent, setDropContent] = useState<string>('');
+
+  return (
+    <Wrapper>
+      <h3>{props.title}</h3>
+      <div className="components">{props.children}</div>
+      <div className="tools-bar">
+        <button
+          onClick={() => {
+            setDropContent('code');
+            setIsVisible((visibility) => !visibility);
+          }}
+        >
+          <img src={codeIcon} alt="" />
+        </button>
+      </div>
+      {isVisible && (
+        <div className="drop-content">
+          <CodeShowBlock>{props.code}</CodeShowBlock>
+        </div>
+      )}
+    </Wrapper>
+  );
+};
 
 export default ComponentShowBlock;
