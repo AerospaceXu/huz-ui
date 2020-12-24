@@ -43,12 +43,14 @@ const Nav: React.FC = () => (
         </NavLink>
       </li>
       <li>
-        <NavLink to="/components/buttons" activeClassName="nav-active">
+        <NavLink to="/buttons" activeClassName="nav-active" exact>
           按钮
         </NavLink>
       </li>
       <li>
-        <NavLink to="/components/inputs">输入框</NavLink>
+        <NavLink to="/inputs" activeClassName="nav-active" exact>
+          输入框
+        </NavLink>
       </li>
     </ul>
   </Wrapper>

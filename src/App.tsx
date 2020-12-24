@@ -15,10 +15,10 @@ const App: React.FC = () => (
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/components/buttons">
+        <Route path="/buttons">
           <ComponentButtonPage />
         </Route>
-        <Route path="/components/inputs">
+        <Route path="/inputs">
           <ComponentInputPage />
         </Route>
       </Switch>
