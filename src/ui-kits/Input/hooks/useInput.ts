@@ -6,6 +6,7 @@ const useInput = () => {
     width: number;
   }>({ width: 0, height: 0 });
   const input = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     if (!input.current) {
       return;
@@ -14,7 +15,7 @@ const useInput = () => {
       width: input.current.clientWidth,
       height: input.current.clientHeight,
     });
-  }, [input]);
+  }, []);
 
   return {
     input,
