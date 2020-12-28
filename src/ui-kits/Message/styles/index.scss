@@ -2,10 +2,14 @@
 
 .huz-message {
   padding: 8px 24px;
+  margin: 8px;
   display: flex;
   align-items: center;
   border: 0.5px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
   box-shadow: $shadow-six;
+
+  animation: huz-message-in-animation 125ms cubic-bezier(1, 0.5, 0.8, 1);
 
   > span {
     width: 28px;
@@ -23,5 +27,14 @@
   > p {
     color: rgba(0, 0, 0, 0.87);
     font-weight: 500;
+  }
+}
+
+@keyframes huz-message-in-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

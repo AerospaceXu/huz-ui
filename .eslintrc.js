@@ -45,6 +45,7 @@ module.exports = {
     'react/no-danger': 0,
     'no-unused-expressions': 0,
     'import/prefer-default-export': 0,
+    'no-undef': 0,
   },
   settings: {
     'import/resolver': {
