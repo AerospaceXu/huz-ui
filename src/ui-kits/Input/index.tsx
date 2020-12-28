@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-
-import InputWrapper from './style/base';
+import './style/index.scss';
 
 import useInput from './hooks/useInput';
 
@@ -75,11 +74,7 @@ const Input: React.FC<Props> = (props) => {
   };
 
   return (
-    <InputWrapper
-      className="huz-input"
-      inputWidth={inputWidth || 200}
-      inputSize={inputSize}
-    >
+    <div className="huz-input" style={{ width: `${inputWidth}px` }}>
       <fieldset className={fieldsetClass}>
         <label htmlFor={label}>
           <input
@@ -95,11 +90,24 @@ const Input: React.FC<Props> = (props) => {
             onMouseLeave={() => setIsHover(false)}
           />
         </label>
-        <legend className={legendClass}>{label}</legend>
+        <legend
+          className={legendClass}
+          style={{
+            height: `${inputSize.height}px`,
+            lineHeight: `${inputSize.height}px`,
+          }}
+        >
+          {label}
+        </legend>
       </fieldset>
-      <div className={`input-border ${borderClass}`} />
-    </InputWrapper>
+      <div
+        className={`input-border ${borderClass}`}
+        style={{
+          top: `${inputSize.height / 2}px`,
+          height: `calc(100% - ${inputSize.height / 2}px)`,
+        }}
+      />
+    </div>
   );
 };
-
 export default Input;
