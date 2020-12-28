@@ -6,6 +6,7 @@ import Main from './Layouts/Main';
 import Home from './views/Home';
 import ComponentButtonPage from './views/ComponentButtonPage';
 import ComponentInputPage from './views/ComponentInputPage';
+import ComponentMessagePage from './views/ComponentMessagePage';
 
 const App: React.FC = () => (
   <Router>
@@ -20,6 +21,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/inputs">
           <ComponentInputPage />
+        </Route>
+        <Route path="/messages">
+          <ComponentMessagePage />
         </Route>
       </Switch>
     </Main>
