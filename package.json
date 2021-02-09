@@ -80,9 +80,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build:web": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint": "./node_modules/.bin/prettier --write 'src/**/*.{ts,tsx,scss,css}' && ./node_modules/.bin/eslint --fix 'src/**/*.{ts,tsx}' && ./node_modules/.bin/eslint 'src/**/*.{ts,tsx}'"
+    "lint": "./node_modules/.bin/prettier --write 'src/**/*.{ts,tsx,scss,css}' && ./node_modules/.bin/eslint --fix 'src/**/*.{ts,tsx}' && ./node_modules/.bin/eslint 'src/**/*.{ts,tsx}'",
+    "build:ui": "./node_modules/.bin/rollup --config"
   },
   "eslintConfig": {
     "extends": [
@@ -119,6 +120,9 @@
     "lint-staged": "^10.5.1",
     "markdown-loader": "^6.0.0",
     "prettier": "^2.1.2",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-svg": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.29.0",
     "sass": "^1.30.0"
   },
   "jest": {

@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/index.css";
-import "./ui-kits/index.css";
-import App from "./App";
+import Layout from "./web/layouts";
 import reportWebVitals from "./reportWebVitals";
 import "github-markdown-css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Layout />
   </React.StrictMode>,
   document.getElementById("root"),
 );

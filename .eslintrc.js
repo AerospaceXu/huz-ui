@@ -47,6 +47,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     "no-undef": 0,
     quotes: ["error", "double"],
+    "import/no-unresolved": 0,
   },
   settings: {
     "import/resolver": {
