@@ -3,14 +3,25 @@ import "./styles/index.scss";
 
 interface Props {
   mode?: "vertical" | "horizontal";
+  width?: number;
+  height?: number;
 }
 
 const Box: React.FC<Props> = (props) => {
-  const { mode, children } = props;
+  const {
+    mode, width, height, children,
+  } = props;
 
-  const className = `huz-box huz-box-${mode ?? "vertical"}`;
+  const className = `huz-box huz-box-${mode ?? "horizontal"}`;
 
-  return <div className={className}>{children}</div>;
+  return (
+    <div
+      className={className}
+      style={{ width: width ?? "auto", height: height ?? "auto" }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Box;

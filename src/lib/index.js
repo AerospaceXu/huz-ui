@@ -242,9 +242,9 @@ const message = ({ messageType, text }) => {
 };
 
 const Box = (props) => {
-    const { mode, children } = props;
-    const className = `huz-box huz-box-${mode ?? "vertical"}`;
-    return jsx("div", Object.assign({ className: className }, { children: children }), void 0);
+    const { mode, width, height, children, } = props;
+    const className = `huz-box huz-box-${mode ?? "horizontal"}`;
+    return (jsx("div", Object.assign({ className: className, style: { width: width ?? "auto", height: height ?? "auto" } }, { children: children }), void 0));
 };
 
 export { Box, Button, Input, Message, message };

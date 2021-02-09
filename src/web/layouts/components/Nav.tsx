@@ -57,6 +57,11 @@ const Nav: React.FC = () => (
           消息提醒
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/box" activeClassName="nav-active" exact>
+          布局盒
+        </NavLink>
+      </li>
     </ul>
   </Wrapper>
 );
