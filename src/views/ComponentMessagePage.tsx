@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import ComponentShowBlock from '../components/ComponentShowBlock';
-import Message from '../ui-kits/Message';
+import ComponentShowBlock from "../components/ComponentShowBlock";
+import Message from "../ui-kits/Message";
 
-import message from '../ui-kits/Message/utils/message';
-import Button from '../ui-kits/Button';
+import message from "../ui-kits/Message/utils/message";
+import Button from "../ui-kits/Button";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ const ComponentInputPage: React.FC = () => (
     <Button
       type="primary"
       onClick={() => {
-        message({ messageType: 'success', text: 'lalala' });
+        message({ messageType: "success", text: "lalala" });
       }}
     >
       触发 Message

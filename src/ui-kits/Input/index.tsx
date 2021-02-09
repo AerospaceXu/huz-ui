@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import './style/index.scss';
+import React, { useState, useEffect, useCallback } from "react";
+import "./style/index.scss";
 
-import useInput from './hooks/useInput';
+import useInput from "./hooks/useInput";
 
 interface Props {
   label: string;
@@ -19,9 +19,9 @@ const Input: React.FC<Props> = (props) => {
 
   const { input, inputSize } = useInput();
 
-  const [borderClass, setBorderClass] = useState<string>('');
-  const [fieldsetClass, setFieldsetClass] = useState<string>('');
-  const [legendClass, setLegendClass] = useState<string>('');
+  const [borderClass, setBorderClass] = useState<string>("");
+  const [fieldsetClass, setFieldsetClass] = useState<string>("");
+  const [legendClass, setLegendClass] = useState<string>("");
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isHover, setIsHover] = useState<boolean>(false);
   const hasInput = value.length > 0;
@@ -29,29 +29,29 @@ const Input: React.FC<Props> = (props) => {
   const getInputState = useCallback(() => {
     setBorderClass(
       isFocused
-        ? 'transparent-border'
+        ? "transparent-border"
         : isHover
           ? hasInput
-            ? 'transparent-border'
-            : 'hovered-border'
+            ? "transparent-border"
+            : "hovered-border"
           : hasInput
-            ? 'transparent-border'
-            : '',
+            ? "transparent-border"
+            : "",
     );
 
     setFieldsetClass(
       isFocused
-        ? 'focused-fieldset'
+        ? "focused-fieldset"
         : isHover
           ? hasInput
-            ? 'hovered-fieldset'
-            : 'transparent-border'
+            ? "hovered-fieldset"
+            : "transparent-border"
           : hasInput
-            ? ''
-            : 'transparent-border',
+            ? ""
+            : "transparent-border",
     );
     setLegendClass(
-      isFocused ? 'legend-up legend-color' : hasInput ? 'legend-up' : '',
+      isFocused ? "legend-up legend-color" : hasInput ? "legend-up" : "",
     );
   }, [hasInput, isFocused, isHover]);
 

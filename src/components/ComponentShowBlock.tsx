@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import codeIcon from '../assets/code-icon.svg';
+import codeIcon from "../assets/code-icon.svg";
 
-import CodeShowBlock from './CodeShowBlock';
+import CodeShowBlock from "./CodeShowBlock";
 
 const Wrapper = styled.div`
   width: calc(100% - 60px);
@@ -65,7 +65,7 @@ interface Props {
 const ComponentShowBlock: React.FC<Props> = (props) => {
   const { title, code } = props;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [dropContent, setDropContent] = useState<string>('');
+  const [dropContent, setDropContent] = useState<string>("");
 
   return (
     <Wrapper>
@@ -74,7 +74,7 @@ const ComponentShowBlock: React.FC<Props> = (props) => {
       <div className="tools-bar">
         <button
           onClick={() => {
-            setDropContent('code');
+            setDropContent("code");
             setIsVisible((visibility) => !visibility);
           }}
         >

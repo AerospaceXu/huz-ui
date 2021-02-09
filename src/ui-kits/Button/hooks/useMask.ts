@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
 const useMask = (animateTime: number) => {
   const [isActive, setIsActive] = useState<boolean>(false);

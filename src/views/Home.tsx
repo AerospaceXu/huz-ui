@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // @ts-ignore
-import guide from '../docs/guide.md';
+import guide from "../docs/guide.md";
 
 const Wrapper = styled.div`
   width: 100%;

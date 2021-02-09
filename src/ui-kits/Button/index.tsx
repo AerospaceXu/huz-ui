@@ -1,24 +1,24 @@
-import React, { MouseEventHandler, useCallback, useState } from 'react';
+import React, { MouseEventHandler, useCallback, useState } from "react";
 
-import './styles/index.scss';
+import "./styles/index.scss";
 
-import ButtonMask from './ButtonMask';
+import ButtonMask from "./ButtonMask";
 
-import { MaskPosition } from './interfaces/mask-position';
-import { ButtonType } from './interfaces/button-type';
+import { MaskPosition } from "./interfaces/mask-position";
+import { ButtonType } from "./interfaces/button-type";
 
-import useButton from './hooks/useButton';
-import useMask from './hooks/useMask';
+import useButton from "./hooks/useButton";
+import useMask from "./hooks/useMask";
 
 const ANIMATE_TIME = 325;
 
 const typeHash: {
   [key: string]: string;
 } = {
-  normal: 'huz-normal-button',
-  primary: 'huz-primary-button',
-  danger: 'huz-danger-button',
-  link: 'huz-link-button',
+  normal: "huz-normal-button",
+  primary: "huz-primary-button",
+  danger: "huz-danger-button",
+  link: "huz-link-button",
 };
 
 interface Props {
@@ -61,14 +61,14 @@ const Button: React.FC<Props> = (props) => {
   const buttonExtraClassName = type ? typeHash[type] : typeHash.normal;
 
   const buttonClassName = `huz-button ${
-    isContained === undefined || isContained ? 'huz-button-contained' : ''
-  } ${disable ? 'huz-disable-button' : buttonExtraClassName} ${
-    className || ''
+    isContained === undefined || isContained ? "huz-button-contained" : ""
+  } ${disable ? "huz-disable-button" : buttonExtraClassName} ${
+    className || ""
   }`;
 
   return (
     <button className={buttonClassName} ref={buttonRef} onClick={handleClick}>
-      {maskVisible && type !== 'link' && (
+      {maskVisible && type !== "link" && (
         <ButtonMask
           buttonSize={buttonSize}
           clickPosition={clickPlace}

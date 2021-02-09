@@ -1,8 +1,8 @@
-import React from 'react';
-import './styles/index.scss';
+import React from "react";
+import "./styles/index.scss";
 
-import successIcon from '../../assets/success-icon.svg';
-import errorIcon from '../../assets/error-icon.svg';
+import successIcon from "../../assets/success-icon.svg";
+import errorIcon from "../../assets/error-icon.svg";
 
 const iconHash = {
   success: successIcon,
@@ -10,7 +10,7 @@ const iconHash = {
 };
 
 interface Props {
-  messageType: 'success' | 'error';
+  messageType: "success" | "error";
   text: string;
 }
 

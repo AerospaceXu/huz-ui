@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import ComponentShowBlock from '../components/ComponentShowBlock';
-import Input from '../ui-kits/Input';
+import ComponentShowBlock from "../components/ComponentShowBlock";
+import Input from "../ui-kits/Input";
 
-import { InputUseCode, InputWidthCode } from '../docs/codes/Input-demo';
+import { InputUseCode, InputWidthCode } from "../docs/codes/Input-demo";
 
 const Wrapper = styled.div`
   width: 100%;
 `;
 
 const ComponentInputPage: React.FC = () => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>("");
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setValue(e.target.value);
 

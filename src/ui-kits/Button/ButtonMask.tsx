@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import './styles/button-mask-style.scss';
+import "./styles/button-mask-style.scss";
 
-import { MaskPosition } from './interfaces/mask-position';
+import { MaskPosition } from "./interfaces/mask-position";
 
 const getString = (hook: number, strands: number) =>
   Math.sqrt(hook ** 2 + strands ** 2);
@@ -43,8 +43,8 @@ const ButtonMask: React.FC<Props> = (props) => {
           animationDuration: `${animateTime}ms`,
           width: `${maskRadius * 2}px`,
           height: `${maskRadius * 2}px`,
-          left: `${!maskPosition ? '50%' : `${maskPosition.left}px`}`,
-          top: `${!maskPosition ? '50%' : `${maskPosition.top}px`}`,
+          left: `${!maskPosition ? "50%" : `${maskPosition.left}px`}`,
+          top: `${!maskPosition ? "50%" : `${maskPosition.top}px`}`,
         }}
       />
     </div>

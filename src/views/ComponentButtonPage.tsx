@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 import {
   ButtonTypeCode,
   ButtonContainCode,
   ButtonDisableCode,
-} from '../docs/codes/Button-demo';
+} from "../docs/codes/Button-demo";
 
-import Button from '../ui-kits/Button';
-import ComponentShowBlock from '../components/ComponentShowBlock';
+import Button from "../ui-kits/Button";
+import ComponentShowBlock from "../components/ComponentShowBlock";
 
 const Wrapper = styled.div`
   width: 100%;

@@ -248,10 +248,10 @@ UI 界面的设计是和传统的平面设计截然不同的。
 
 ```css
  {
-  font-family: '宋体';
-  font-family: '宋体', Arial;
-  font-family: Arial, '宋体', '微软雅黑';
-  font-family: Helvetica, Arial, '华文细黑', '微软雅黑';
+  font-family: "宋体";
+  font-family: "宋体", Arial;
+  font-family: Arial, "宋体", "微软雅黑";
+  font-family: Helvetica, Arial, "华文细黑", "微软雅黑";
 }
 ```
 
@@ -267,9 +267,9 @@ UI 界面的设计是和传统的平面设计截然不同的。
 
 ```css
  {
-  font-family: SimSun, '宋体';
-  font-family: 'Microsoft YaHei', '微软雅黑';
-  font-family: STXihei, '华文细黑', 'Microsoft YaHei', ' 微软雅黑';
+  font-family: SimSun, "宋体";
+  font-family: "Microsoft YaHei", "微软雅黑";
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", " 微软雅黑";
 }
 ```
 
@@ -279,7 +279,7 @@ UI 界面的设计是和传统的平面设计截然不同的。
 
 ```css
  {
-  font-family: Georgia, SimSun, '宋体';
+  font-family: Georgia, SimSun, "宋体";
 }
 ```
 
@@ -292,28 +292,28 @@ UI 界面的设计是和传统的平面设计截然不同的。
 ```css
  {
   /*黑体*/
-  font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica,
-    'Nimbus Sans L', Arial, 'Liberation Sans', 'PingFang SC',
-    'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC',
-    'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei',
-    'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp',
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
+    "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei",
+    "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp",
     sans-serif;
 
   /*楷体*/
-  font-family: Baskerville, Georgia, 'Liberation Serif', 'Kaiti SC', STKaiti,
-    'AR PL UKai CN', 'AR PL UKai HK', 'AR PL UKai TW', 'AR PL UKai TW MBE',
-    'AR PL KaitiM GB', KaiTi, KaiTi_GB2312, DFKai-SB, 'TW\-Kai', serif;
+  font-family: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti,
+    "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE",
+    "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
 
   /*宋体*/
-  font-family: Georgia, 'Nimbus Roman No9 L', 'Songti SC', 'Noto Serif CJK SC',
-    'Source Han Serif SC', 'Source Han Serif CN', STSong, 'AR PL New Sung',
-    'AR PL SungtiL GB', NSimSun, SimSun, 'TW\-Sung', 'WenQuanYi Bitmap Song',
-    'AR PL UMing CN', 'AR PL UMing HK', 'AR PL UMing TW', 'AR PL UMing TW MBE',
+  font-family: Georgia, "Nimbus Roman No9 L", "Songti SC", "Noto Serif CJK SC",
+    "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung",
+    "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song",
+    "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE",
     PMingLiU, MingLiU, serif;
 
   /*仿宋*/
-  font-family: Baskerville, 'Times New Roman', 'Liberation Serif', STFangsong,
-    FangSong, FangSong_GB2312, 'CWTEX\-F', serif;
+  font-family: Baskerville, "Times New Roman", "Liberation Serif", STFangsong,
+    FangSong, FangSong_GB2312, "CWTEX\-F", serif;
 }
 ```
 

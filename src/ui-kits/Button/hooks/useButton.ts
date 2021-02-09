@@ -1,6 +1,6 @@
 import React, {
   useState, useRef, useEffect, useCallback,
-} from 'react';
+} from "react";
 
 const useButton = () => {
   const button = useRef<HTMLButtonElement>(null);
